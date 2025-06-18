@@ -5,7 +5,7 @@
 using std::exception;
 using std::string;
 
-class Calculator {
+class Calculator final{
 public:
     /**
      * @brief Get the quotient of two numbers
@@ -55,7 +55,7 @@ private:
     double divide(double first_number, double second_number);
 };
 
-class calculatorError: public exception {
+class calculatorError final: public exception {
 public:
     calculatorError(string error) : m_error(error){};
     const char* what() const noexcept override {
