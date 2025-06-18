@@ -30,6 +30,6 @@ double Calculator::calculate(double first_number, char calculation_operator, dou
         case operators::DIVIDE_OPERATOR:
             return divide(first_number, second_number);
         default:
-            throw calculatorError("Unkown operator");         
+            throw calculatorError("Unknown operator");         
     }
 };
