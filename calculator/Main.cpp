@@ -11,24 +11,24 @@ int main() {
 	Calculator myCalc; 
 	
 	cout << "5 + 3 = ";
-    result = myCalc.calculate(5, '+', 3);
+    result = myCalc.calculate(5, operators::ADD_OPERATOR, 3);
     cout << result << endl;
 
 	cout << "5 - 3 = ";
-    result = myCalc.calculate(5, '-', 3);
+    result = myCalc.calculate(5, operators::SUBTRACT_OPERATOR, 3);
     cout << result << endl;
 
     cout << "5 * 3 = ";
-    result = myCalc.calculate(5, '*', 3);
+    result = myCalc.calculate(5, operators::MULTIPLY_OPERATOR, 3);
     cout << result << endl;
 
     cout << "5 / 3 = ";
-    result = myCalc.calculate(5, '/', 3);
+    result = myCalc.calculate(5, operators::DIVIDE_OPERATOR, 3);
     cout << result << endl;
     
     try {
         cout << "5 / 0 = ";
-        result = myCalc.calculate(5, '/', 0);
+        result = myCalc.calculate(5, operators::DIVIDE_OPERATOR, 0);
         cout << result << endl;
     } catch (const calculatorError& exception) {
         cerr << "A calculator error has occurred (" << exception.what() << ")" << endl;
