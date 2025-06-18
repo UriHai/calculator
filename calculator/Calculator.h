@@ -4,14 +4,14 @@
 class Calculator final{
 public:
     /**
-     * @brief Get the quotient of two numbers
+     * @brief Calculate expression
      *
      * @param firstNumber          [IN]    The first number
      * @param calculationOperator  [IN]    The calculation operator
      * @param secondNumber         [IN]    The second number
-     * @return                             The quotient of the two numbers
+     * @return                             The result of the expression
      */
-    double calculate(double firstNumber, char calculationOperator, double secondNumber);
+    static double calculate(double firstNumber, char calculationOperator, double secondNumber);
 
 private:
     /**
@@ -21,7 +21,7 @@ private:
      * @param secondNumber         [IN]    The second number
      * @return                             The sum of the two numbers
      */
-    double add(double firstNumber, double secondNumber);
+    static double add(double firstNumber, double secondNumber);
 
     /**
      * @brief Get the difference of two numbers
@@ -30,7 +30,7 @@ private:
      * @param secondNumber         [IN]    The second number
      * @return                             The difference of the two numbers
      */
-    double subtract(double firstNumber, double secondNumber);
+    static double subtract(double firstNumber, double secondNumber);
 
     /**
      * @brief Get the multiply of two numbers
@@ -39,7 +39,7 @@ private:
      * @param secondNumber         [IN]    The second number
      * @return                             The multiply of the two numbers
      */
-    double multiply(double firstNumber, double secondNumber);
+    static double multiply(double firstNumber, double secondNumber);
 
     /**
      * @brief Get the quotient of two numbers
@@ -48,7 +48,7 @@ private:
      * @param secondNumber         [IN]    The second number
      * @return                             The quotient of the two numbers
      */
-    double divide(double firstNumber, double secondNumber);
+    static double divide(double firstNumber, double secondNumber);
 };
 
 class CalculatorError {
