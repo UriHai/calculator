@@ -1,5 +1,7 @@
 #include "Calculator.h"
 
+using std::string;
+
 double Calculator::add(double firstNumber, double secondNumber) {
     return firstNumber + secondNumber;
 }
@@ -14,7 +16,7 @@ double Calculator::multiply(double firstNumber, double secondNumber) {
 
 double Calculator::divide(double firstNumber, double secondNumber) {
     if (secondNumber == 0) {
-        throw calculatorError("Zero division");
+        throw ZeroDivisionError();
     }
     return firstNumber / secondNumber;
 }
@@ -30,6 +32,16 @@ double Calculator::calculate(double firstNumber, char calculationOperator, doubl
         case Operator::DIVIDE_OPERATOR:
             return divide(firstNumber, secondNumber);
         default:
-            throw calculatorError("Unknown operator");         
+            throw UnknownOperatorError();         
     }
 };
+
+CalculatorError::CalculatorError(string error) : m_errorMessage(error){};
+
+string CalculatorError::getErrorMessage() const {
+    return m_errorMessage;
+};
+
+ZeroDivisionError::ZeroDivisionError() : CalculatorError("Zero division error"){};
+
+UnknownOperatorError::UnknownOperatorError() : CalculatorError("Unkown operator error"){};

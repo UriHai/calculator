@@ -1,9 +1,5 @@
 #pragma once
-#include <exception>
 #include <string>
-
-using std::exception;
-using std::string;
 
 class Calculator final{
 public:
@@ -55,15 +51,23 @@ private:
     double divide(double firstNumber, double secondNumber);
 };
 
-class calculatorError final: public exception {
+class CalculatorError {
 public:
-    calculatorError(string error) : m_error(error){};
-    const char* what() const noexcept override {
-        return m_error.c_str();
-    }
+    explicit CalculatorError(std:: string error);
+    std::string getErrorMessage() const;
 
 private: 
-    string m_error;
+    std::string m_errorMessage;
+};
+
+class ZeroDivisionError final: public CalculatorError {
+public:
+    explicit ZeroDivisionError();
+};
+
+class UnknownOperatorError final: public CalculatorError {
+public:
+    explicit UnknownOperatorError();
 };
 
 enum class Operator: char { 

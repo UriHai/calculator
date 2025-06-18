@@ -30,17 +30,17 @@ int main() {
         cout << "5 / 0 = ";
         result = myCalc.calculate(5, static_cast<char>(Operator::DIVIDE_OPERATOR), 0);
         cout << result << endl;
-    } catch (const calculatorError& exception) {
-        cerr << "A calculator error has occurred (" << exception.what() << ")" << endl;
+    } catch (const CalculatorError& exception) {
+        cerr << "A calculator error has occurred (" << exception.getErrorMessage() << ")" << endl;
     }
 
     try {
         cout << "5 ^ 3 = ";
         result = myCalc.calculate(5, '^', 3);
         cout << result << endl;
-    } catch (const calculatorError& exception) {
-        cerr << "A calculator error has occurred (" << exception.what() << ")" << endl;
-}
+    } catch (const CalculatorError& exception) {
+        cerr << "A calculator error has occurred (" << exception.getErrorMessage() << ")" << endl;
+    }
 
     return 0;
 }
