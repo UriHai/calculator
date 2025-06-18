@@ -66,7 +66,7 @@ private:
     string m_error;
 };
 
-enum operators { 
+enum class Operator: char { 
     ADD_OPERATOR = '+',
     SUBTRACT_OPERATOR = '-',
     MULTIPLY_OPERATOR = '*',
