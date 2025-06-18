@@ -3,10 +3,11 @@
 #include <iostream>
 
 using std::cout;
+using std::cerr;
 using std::endl;
 
 int main() { 
-	double result = 0;
+    double result = 0;
 	Calculator myCalc; 
 	
 	cout << "5 + 3 = ";
@@ -29,25 +30,17 @@ int main() {
         cout << "5 / 0 = ";
         result = myCalc.calculate(5, '/', 0);
         cout << result << endl;
-    }
-
-    catch (calculatorErrors calculatorError) {
-        if (calculatorError == calculatorErrors::ZERO_DIVISION) {
-            cout << "Dividing by zero is not allowed!" << endl;
-        }
+    } catch (const calculatorError& exception) {
+        cerr << "A calculator error has occurred (" << exception.what() << ")" << endl;
     }
 
     try {
         cout << "5 ^ 3 = ";
         result = myCalc.calculate(5, '^', 3);
         cout << result << endl;
-    }
+    } catch (const calculatorError& exception) {
+        cerr << "A calculator error has occurred (" << exception.what() << ")" << endl;
+}
 
-    catch (calculatorErrors calculatorError) {
-        if (calculatorError == calculatorErrors::UNKOWN_OPERATOR) {
-            cout << "Unkown operator!" << endl;
-        }
-    }
-
-	return 0;
+    return 0;
 }
