@@ -2,7 +2,7 @@
 
 #include <string>
 
-class Calculator final{
+class Calculator final {
 public:
     /**
      * @brief Calculate expression
