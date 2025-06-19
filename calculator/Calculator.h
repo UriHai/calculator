@@ -54,7 +54,7 @@ private:
 
 class CalculatorError {
 public:
-    explicit CalculatorError(std:: string error);
+    explicit CalculatorError(const std::string& error);
     std::string getErrorMessage() const;
 
 private: 
