@@ -36,7 +36,9 @@ double Calculator::calculate(double firstNumber, char calculationOperator, doubl
     }
 };
 
-CalculatorError::CalculatorError(string error) : m_errorMessage(error){};
+CalculatorError::CalculatorError(string error) : m_errorMessage(error){
+    // Left blank intentionally
+};
 
 string CalculatorError::getErrorMessage() const {
     return m_errorMessage;
