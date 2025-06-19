@@ -44,4 +44,4 @@ string CalculatorError::getErrorMessage() const {
 
 ZeroDivisionError::ZeroDivisionError() : CalculatorError("Zero division error"){};
 
-UnknownOperatorError::UnknownOperatorError() : CalculatorError("Unkown operator error"){};
+UnknownOperatorError::UnknownOperatorError() : CalculatorError("Unknown operator error"){};
