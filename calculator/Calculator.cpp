@@ -36,7 +36,7 @@ double Calculator::calculate(double firstNumber, char calculationOperator, doubl
     }
 };
 
-CalculatorError::CalculatorError(string error) : m_errorMessage(error){
+CalculatorError::CalculatorError(string error) : m_errorMessage(error) {
     // Left blank intentionally
 };
 
@@ -44,6 +44,10 @@ string CalculatorError::getErrorMessage() const {
     return m_errorMessage;
 };
 
-ZeroDivisionError::ZeroDivisionError() : CalculatorError("Zero division error"){};
+ZeroDivisionError::ZeroDivisionError() : CalculatorError("Zero division error") {
+    // Left blank intentionally
+};
 
-UnknownOperatorError::UnknownOperatorError() : CalculatorError("Unknown operator error"){};
+UnknownOperatorError::UnknownOperatorError() : CalculatorError("Unknown operator error") {
+    // Left blank intentionally
+};
