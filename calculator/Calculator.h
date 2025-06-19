@@ -29,16 +29,16 @@ private:
      *
      * @param firstNumber          [IN]    The first number
      * @param secondNumber         [IN]    The second number
-     * @return                             The difference of the two numbers
+     * @return                             The result of subtracting the second number from the first number
      */
     static double subtract(double firstNumber, double secondNumber);
 
     /**
-     * @brief Get the multiply of two numbers
+     * @brief Get the product of two numbers
      *
      * @param firstNumber          [IN]    The first number
      * @param secondNumber         [IN]    The second number
-     * @return                             The multiply of the two numbers
+     * @return                             The product of the two numbers
      */
     static double multiply(double firstNumber, double secondNumber);
 
